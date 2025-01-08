@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Travel Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .input-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .details-section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .details-section h2 {
+            color: #333;
+        }
+        .details-section table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .details-section table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .rate-time-date {
+            font-size: 16px;
+            color: #555;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Travel Information</h1>
+    <p>Find your travel details based on your destination</p>
+</header>
+
+<div class="container">
+    <!-- Input Section to Enter Destination -->
+    <div class="input-section">
+        <label for="destination">Your Destination:</label>
+        <input type="text" id="destination" placeholder="e.g.,India" oninput="updateTravelInfo()">
+    </div>
+
+    <!-- Train Details Section -->
+    <div class="details-section" id="train-details">
+        <h2>Train Travel</h2>
+        <p class="rate-time-date"><strong>Rate:</strong> $40 - $120</p>
+        <p class="rate-time-date"><strong>Travel Time:</strong> 3 - 5 hours</p>
+        <p class="rate-time-date"><strong>Available Dates:</strong> Daily, 9 AM to 9 PM</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Train</th>
+                    <th>Departure Time</th>
+                    <th>Arrival Time</th>
+                    <th>Fare</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Express Train</td>
+                    <td>9:00 AM</td>
+                    <td>12:00 PM</td>
+                    <td>$50</td>
+                </tr>
+                <tr>
+                    <td>Speed Train</td>
+                    <td>1:00 PM</td>
+                    <td>4:00 PM</td>
+                    <td>$75</td>
+                </tr>
+                <tr>
+                    <td>Night Train</td>
+                    <td>7:00 PM</td>
+                    <td>10:00 PM</td>
+                    <td>$120</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bus Details Section -->
+    <div class="details-section" id="bus-details">
+        <h2>Bus Travel</h2>
+        <p class="rate-time-date"><strong>Rate:</strong> $15 - $50</p>
+        <p class="rate-time-date"><strong>Travel Time:</strong> 2 - 4 hours</p>
+        <p class="rate-time-date"><strong>Available Dates:</strong> Daily, 8 AM to 10 PM</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Bus Service</th>
+                    <th>Departure Time</th>
+                    <th>Arrival Time</th>
+                    <th>Fare</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>City Bus</td>
+                    <td>8:00 AM</td>
+                    <td>10:00 AM</td>
+                    <td>$15</td>
+                </tr>
+                <tr>
+                    <td>Express Bus</td>
+                    <td>12:00 PM</td>
+                    <td>2:30 PM</td>
+                    <td>$30</td>
+                </tr>
+                <tr>
+                    <td>Luxury Bus</td>
+                    <td>6:00 PM</td>
+                    <td>8:30 PM</td>
+                    <td>$50</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Airplane Details Section -->
+    <div class="details-section" id="airplane-details">
+        <h2>Airplane Travel</h2>
+        <p class="rate-time-date"><strong>Rate:</strong> $100 - $500</p>
+        <p class="rate-time-date"><strong>Travel Time:</strong> 1 - 3 hours</p>
+        <p class="rate-time-date"><strong>Available Dates:</strong> Daily, Flights every hour</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Airline</th>
+                    <th>Departure Time</th>
+                    <th>Arrival Time</th>
+                    <th>Fare</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Airline A</td>
+                    <td>10:00 AM</td>
+                    <td>11:30 AM</td>
+                    <td>$150</td>
+                </tr>
+                <tr>
+                    <td>Airline B</td>
+                    <td>2:00 PM</td>
+                    <td>3:30 PM</td>
+                    <td>$200</td>
+                </tr>
+                <tr>
+                    <td>Airline C</td>
+                    <td>6:00 PM</td>
+                    <td>7:30 PM</td>
+                    <td>$500</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Car Rental Details Section -->
+    <div class="details-section" id="car-details">
+        <h2>Car Rental</h2>
+        <p class="rate-time-date"><strong>Rate:</strong> $30 - $100 per day</p>
+        <p class="rate-time-date"><strong>Rental Duration:</strong> Daily, Weekly</p>
+        <p class="rate-time-date"><strong>Available Vehicles:</strong> Economy, SUV, Luxury, Electric</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Car Model</th>
+                    <th>Availability</th>
+                    <th>Rate per Day</th>
+                    <th>Rental Duration</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Economy Car</td>
+                    <td>Available</td>
+                    <td>$30</td>
+                    <td>Daily</td>
+                </tr>
+                <tr>
+                    <td>SUV</td>
+                    <td>Available</td>
+                    <td>$60</td>
+                    <td>Daily</td>
+                </tr>
+                <tr>
+                    <td>Luxury Car</td>
+                    <td>Available</td>
+                    <td>$100</td>
+                    <td>Daily</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 DreamEscapeTravels. All rights reserved.</p>
+</footer>
+
+<script>
+    const travelInfo = {
+        "New York": {
+            train: { rate: "$50-$100", time: "3-4 hours", date: "Daily, 9 AM to 9 PM" },
+            bus: { rate: "$20-$50", time: "2-3 hours", date: "Daily, 8 AM to 10 PM" },
+            airplane: { rate: "$150-$500", time: "1.5 hours", date: "Hourly, daily" },
+            car: { rate: "$40-$80 per day", time: "Flexible", date: "Available daily" },
+        },
+        "Los Angeles": {
+            train: { rate: "$60-$120", time: "4-6 hours", date: "Daily, 7 AM to 10 PM" },
+            bus: { rate: "$15-$40", time: "3-5 hours", date: "Daily, 7 AM to 9 PM" },
+            airplane: { rate: "$200-$700", time: "2 hours", date: "Hourly, daily" },
+            car: { rate: "$50-$100 per day", time: "Flexible", date: "Available daily" },
+        },
+        "Paris": {
+            train: { rate: "€50-€120", time: "3-5 hours", date: "Daily, 9 AM to 9 PM" },
+            bus: { rate: "€20-€50", time: "2-4 hours", date: "Daily, 8 AM to 10 PM" },
+            airplane: { rate: "€150-€500", time: "1.5 hours", date: "Hourly, daily" },
+            car: { rate: "€40-€80 per day", time: "Flexible", date: "Available daily" },
+        },
+        "London": {
+            train: { rate: "£40-£100", time: "2-4 hours", date: "Daily, 9 AM to 6 PM" },
+            bus: { rate: "£15-£35", time: "3-5 hours", date: "Daily, 7 AM to 10 PM" },
+            airplane: { rate: "£100-£400", time: "1 hour", date: "Hourly, daily" },
+            car: { rate: "£30-£70 per day", time: "Flexible", date: "Available daily" },
+        },
+        "Tokyo": {
+            train: { rate: "¥5000-¥12000", time: "3-5 hours", date: "Daily, 10 AM to 9 PM" },
+            bus: { rate: "¥1500-¥5000", time: "2-4 hours", date: "Daily, 8 AM to 9 PM" },
+            airplane: { rate: "¥15000-¥50000", time: "1.5 hours", date: "Hourly, daily" },
+            car: { rate: "¥5000-¥8000 per day", time: "Flexible", date: "Available daily" },
+        },
+        "Sydney": {
+        train: { rate: "A$25-A$80", time: "2-3 hours", date: "Daily, 6 AM to 10 PM" },
+        bus: { rate: "A$10-A$30", time: "3-5 hours", date: "Daily, 6 AM to 9 PM" },
+        airplane: { rate: "A$200-A$600", time: "2 hours", date: "Hourly, daily" },
+        car: { rate: "A$50-A$100 per day", time: "Flexible", date: "Available daily" },
+    },
+    "Dubai": {
+        train: { rate: "AED 20-AED 50", time: "30-60 minutes", date: "Daily, 6 AM to 11 PM" },
+        bus: { rate: "AED 5-AED 25", time: "1-2 hours", date: "Daily, 5 AM to 11 PM" },
+        airplane: { rate: "AED 500-AED 3000", time: "1 hour", date: "Hourly, daily" },
+        car: { rate: "AED 150-AED 300 per day", time: "Flexible", date: "Available daily" },
+    },
+    "Bangkok": {
+        train: { rate: "฿100-฿400", time: "1-3 hours", date: "Daily, 6 AM to 10 PM" },
+        bus: { rate: "฿30-฿200", time: "2-5 hours", date: "Daily, 5 AM to 9 PM" },
+        airplane: { rate: "฿1500-฿5000", time: "1.5 hours", date: "Hourly, daily" },
+        car: { rate: "฿1000-฿2500 per day", time: "Flexible", date: "Available daily" },
+    },
+    "Cape Town":{
+
+        Train: { rate: "ZAR 50-ZAR 200", time: "30 minutes-1 hour", date: "Daily, 5 AM to 9 PM" },
+        Bus: { rate: "ZAR 20-ZAR 100", time: "1-3 hours", date: "Daily, 6 AM to 10 PM" },
+        Airplane: { rate: "ZAR 500-ZAR 3000", time: "1.5 hours", date: "Hourly, daily" },
+        Car: { rate: "ZAR 400-ZAR 1500 per day", time: "Flexible", date: "Available daily" }
+    },
+    "Moscow":{
+
+        Train: { rate: "₽300-₽2000", time: "1-4 hours", date: "Daily, 6 AM to 11 PM" },
+        Bus: { rate: "₽20-₽100", time: "2-5 hours", date: "Daily, 5 AM to 10 PM" },
+        Airplane: { rate: "₽3000-₽15000", time: "1.5 hours", date: "Hourly, daily" },
+        Car: { rate: "₽1500-₽5000 per day", time: "Flexible", date: "Available daily" }
+    },
+    "Hong Kong":{
+
+        Train: { rate: "HKD 30-HKD 120", time: "30 minutes-1 hour", date: "Daily, 6 AM to 12 AM" },
+        Bus: { rate: "HKD 5-HKD 40", time: "1-2 hours", date: "Daily, 5 AM to 11 PM" },
+        Airplane: { rate: "HKD 300-HKD 2000", time: "1.5 hours", date: "Hourly, daily" },
+        Car: { rate: "HKD 200-HKD 600 per day", time: "Flexible", date: "Available daily" }
+    },
+    "Russia":{
+
+        Train: { rate: "₽500-₽3000", time: "1-4 hours", date: "Daily, 6 AM to 11 PM" },
+        Bus: { rate: "₽30-₽300", time: "2-6 hours", date: "Daily, 5 AM to 10 PM" },
+        Airplane: { rate: "₽3000-₽15000", time: "1.5 hours", date: "Hourly, daily" },
+        Car: { rate: "₽1500-₽6000 per day", time: "Flexible", date: "Available daily" }
+    },
+   
+    };
+
+    function updateTravelInfo() {
+        const destination = document.getElementById("destination").value.trim();
+        const details = travelInfo[destination];
+
+        if (details) {
+            // Update Train, Bus, Airplane, Car info dynamically
+            document.getElementById("train-details").style.display = 'block';
+            document.getElementById("bus-details").style.display = 'block';
+            document.getElementById("airplane-details").style.display = 'block';
+            document.getElementById("car-details").style.display = 'block';
+
+            document.querySelector("#train-details .rate-time-date").innerHTML = `
+                <strong>Rate:</strong> ${details.train.rate}<br>
+                <strong>Travel Time:</strong> ${details.train.time}<br>
+                <strong>Available Dates:</strong> ${details.train.date}`;
+            
+            document.querySelector("#bus-details .rate-time-date").innerHTML = `
+                <strong>Rate:</strong> ${details.bus.rate}<br>
+                <strong>Travel Time:</strong> ${details.bus.time}<br>
+                <strong>Available Dates:</strong> ${details.bus.date}`;
+            
+            document.querySelector("#airplane-details .rate-time-date").innerHTML = `
+                <strong>Rate:</strong> ${details.airplane.rate}<br>
+                <strong>Travel Time:</strong> ${details.airplane.time}<br>
+                <strong>Available Dates:</strong> ${details.airplane.date}`;
+            
+            document.querySelector("#car-details .rate-time-date").innerHTML = `
+                <strong>Rate:</strong> ${details.car.rate}<br>
+                <strong>Rental Duration:</strong> ${details.car.time}<br>
+                <strong>Available Vehicles:</strong> ${details.car.date}`;
+        } else {
+            // Hide the details if the destination is not found
+            document.getElementById("train-details").style.display = 'none';
+            document.getElementById("bus-details").style.display = 'none';
+            document.getElementById("airplane-details").style.display = 'none';
+            document.getElementById("car-details").style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>

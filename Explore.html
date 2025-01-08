@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display Table</title>
+</head>
+<style>
+  /* Apply background image to the entire page */
+  body {
+    background-image: url('https://via.placeholder.com/1500'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+  }
+
+  /* Centering the content of the page */
+  .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+      border-radius: 10px;
+  }
+
+  /* Table styling */
+  table {
+      width: 100%;
+      border-collapse: collapse;
+  }
+
+  table, th, td {
+      border: 1px solid #ddd;
+  }
+
+  th, td {
+      padding: 12px;
+      text-align: left;
+  }
+
+  th {
+      background-color: #4CAF50;
+      color: white;
+  }
+
+  td {
+      background-color: #f9f9f9;
+  }
+
+  /* Hover effect for rows */
+  tr:hover {
+      background-color: #f1f1f1;
+  }
+
+  /* Button Styling */
+  .btn {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      margin: 20px 0;
+  }
+
+  .btn:hover {
+      background-color: #45a049;
+  }
+</style>
+<body>
+  <h2>Submitted Details</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Location</th>
+        <th>Date</th>
+        <th>Number of People</th>
+        <th>Arrival Timing</th>
+        <th>Day</th>
+        <th>Ending timing</th>
+      </tr>
+    </thead>
+    <tbody id="dataTable1">
+      <!-- Data will be inserted here -->
+    </tbody>
+  </table>
+
+
+
+  <div class="container">
+    <h1>Fill Details of People </h1>
+
+    <button class="btn" onclick="member()">Details</button>
+
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Location</th>
+                <th>Occupation</th>
+            </tr>
+        </thead>
+        <tbody>
+          </table>
+            
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  <script>
+    // Function to display data from localStorage
+// time
+var time=new Date;
+var day=time.getDay();
+var month=time.getMonth()+1;
+     // Get the data from localStorage
+    const formData = JSON.parse(localStorage.getItem("formData"));
+    function displayData() {
+     
+      
+
+      if (formData) {
+        // Create a row and insert the data into the table
+        const tableRow = `<tr>
+                            <td>${formData.location}</td>
+                            <td>${formData.date}</td>
+                            <td>${formData.people}</td>
+                            <td>${day}<br>${month}</td>
+                            <td>${formData.people}</td>
+                            <td>${formData.people}</td>
+                            
+                          </tr>`;
+
+        // Append the row to the table body
+        document.getElementById("dataTable1").innerHTML = tableRow;
+      } else {
+        // Handle the case where there is no data in localStorage
+        document.getElementById("dataTable1").innerHTML = "<tr><td colspan='3'>No data available</td></tr>";
+      }
+    }
+
+    // Call the function to display data when the page loads
+    displayData();
+
+
+
+
+
+    // Function to add a new row dynamically to the table
+function addRow() {
+    const tableBody = document.querySelector('#dataTable tbody');
+    const newRow = document.createElement('tr');
+
+    // Sample dynamic data
+    const id = Math.floor(Math.random() * 10000) + 4;  // ID starting from 4
+    const name = "New User";
+    const age = Math.floor(Math.random() * 50) + 18;  // Random age
+    const email = "newuser@example.com";
+    const country = "Unknown";
+    const occupation = "Unknown";
+
+    newRow.innerHTML = `<td>${id}</td><td>${name}</td><td>${age}</td><td>${email}</td><td>${country}</td><td>${occupation}</td>`;
+    tableBody.appendChild(newRow);
+}
+function member(){
+for(var i=1;i<=formData.people;i++){
+  addRow()
+}
+}
+  </script>
+</body>
+</html>
